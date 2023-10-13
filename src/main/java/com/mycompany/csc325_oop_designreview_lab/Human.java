@@ -6,18 +6,20 @@ package com.mycompany.csc325_oop_designreview_lab;
 
 /**
  *
- * @author MoaathAlrajab
+ * @author MoaathAlrajab and Catamv3
  */
 public abstract class Human {
     private String name;
 	private String address;
-	private short age;
+	private int age;
 
-	// constructor that takes only two paras
-	public Human(String name, short age) {
+
+	public Human(String name, int age, String address) {
 		this.name = name;
 		this.age = age;
+		this.address = address;
 	}
+
 
 	public String getName() {
 		return name;
@@ -27,16 +29,16 @@ public abstract class Human {
 		this.name = name;
 	}
 
-	public abstract String getAddress() ;
+	public String getAddress() {return address;}
 
-	public abstract void setAddress(String address);
+	public void setAddress(String address){this.address = address;}
 
 
-	public short getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(short age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 }

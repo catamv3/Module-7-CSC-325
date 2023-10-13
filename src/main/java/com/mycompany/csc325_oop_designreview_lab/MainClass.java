@@ -41,5 +41,35 @@ public class MainClass {
 		// ToDo 14: submit using a pull request.
 	}
 
+	public class Freshman extends Student{
+	 private int credits;
+	 public Freshman(String name, int age, int credits){
+			super(name, age, 0.0);
+			this.credits=credits;
+		}
+
+		protected int getCredits(){return credits;}
+
+		private void setCredits(int credits){this.credits = credits;}
+
+		@Override
+		public String toString() {
+			String str = "";
+
+			str = String.format("%s\n%.2f\n", getName(), getAge(),getAddress(),getGPA());
+			return str;
+		}
+
+
+	}
+
+	public class Senior extends Student{
+		private int credits;
+		public Senior(String name, int age, int credits){
+			super(name, age, 0.0);
+			this.credits=credits;
+		}
+	}
+
 }
 
