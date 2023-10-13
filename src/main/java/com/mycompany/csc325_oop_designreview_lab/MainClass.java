@@ -4,72 +4,67 @@
 
 package com.mycompany.csc325_oop_designreview_lab;
 
+import java.util.Scanner;
+
 /**
+ * This class contains the main method for the program for Module 5.
  *
- * @author MoaathAlrajab
+ * @author MoaathAlrajab and Catamv3
  */
-public class MainClass {
+public class MainClass { //open class
 
- public static void main(String[] args) {
-		// ToDo 5: Fix the error
+    /**
+     * main method for the program.
+     *
+     * @param args
+     */
+    public static void main(String[] args) { //open main
+        // ToDo 5: Fix the error
 
-		// ToDo 6: Fix the constructor of the Student class
+        // ToDo 6: Fix the constructor of the Student class
 
-                // Todo 7: Create two classes for Freshman and Senior 
+        // Todo 7: Create two classes for Freshman and Senior
 
-                // ToDo 8: The senior class should have a minimum of 85 credits  
+        // ToDo 8: The senior class should have a minimum of 85 credits
 
-		// ToDo 9: Add a toString method for the Student class
-		// ToDo 10: Add a toString method for the Freshman class
+        // ToDo 9: Add a toString method for the Student class
+        // ToDo 10: Add a toString method for the Freshman class
 
-		Student std1= new Student("James", 20);
-                // ToDo 11: Add a toString method for the Senior class
-
-		Freshman std1= new Student("James", 20, 12); // name, age, credits
-
-                Senior std2 = new Student("John", 30, 90);
-
+        // ToDo 11: Add a toString method for the Senior class
 		// ToDo 12: Set the gpa of the student using the scanner and user
 		// 			input and then print the output.
 
-		System.out.println(std1);
+		//declare a student object
+		Student std1 = new Student("James", 20);
 
-                System.out.println(std2);
+		//declare student object of type freshman
+		Student fre1 = new Freshman("Mike", 20, 0); // name, age, credits
 
-		// ToDo 13: add comments and explain your code
+		//declare student object of type senior
+		Student snr1 = new Senior("John", 30, 90);
 
-		// ToDo 14: submit using a pull request.
-	}
+		//create a scanner object and prompt the user 3 times for a GOA for each student
+		//Assign the gpa to the student after each prompt.
+		Scanner scnr = new Scanner(System.in);
+        System.out.println("What is the GPA of the first student?");
+        std1.setGpa(Double.parseDouble(scnr.nextLine()));
+        System.out.println("What is the GPA of the second student?");
+        fre1.setGpa(Double.parseDouble(scnr.nextLine()));
+        System.out.println("What is the GPA of the third student?");
+        snr1.setGpa(Double.parseDouble(scnr.nextLine()));
 
-	public class Freshman extends Student{
-	 private int credits;
-	 public Freshman(String name, int age, int credits){
-			super(name, age, 0.0);
-			this.credits=credits;
-		}
+		//print the data of the three students.
+        System.out.println(std1);
+        System.out.println(fre1);
+        System.out.println(snr1);
 
-		protected int getCredits(){return credits;}
+        // ToDo 13: add comments and explain your code
 
-		private void setCredits(int credits){this.credits = credits;}
-
-		@Override
-		public String toString() {
-			String str = "";
-
-			str = String.format("%s\n%.2f\n", getName(), getAge(),getAddress(),getGPA());
-			return str;
-		}
+        // ToDo 14: submit using a pull request.
+    }//close main
 
 
-	}
+}//close class
 
-	public class Senior extends Student{
-		private int credits;
-		public Senior(String name, int age, int credits){
-			super(name, age, 0.0);
-			this.credits=credits;
-		}
-	}
 
-}
 
